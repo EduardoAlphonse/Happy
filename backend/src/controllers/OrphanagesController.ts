@@ -2,10 +2,9 @@ import { Request, Response } from 'express';
 import { getRepository } from 'typeorm';
 import * as Yup from 'yup';
 
-import OrphanageView from '../views/OrphanagesView';
+import OrphanagesView from '../views/OrphanagesView';
 
 import Orphanage from '../models/Orphanage';
-import OrphanagesView from '../views/OrphanagesView';
 
 export default {
 	async index(request: Request, response: Response) {
@@ -27,7 +26,7 @@ export default {
 			relations: ['images']
 		});
 
-		return response.json(OrphanageView.render(orphanage));
+		return response.json(OrphanagesView.render(orphanage));
 	},
 
 	async create(request: Request, response: Response) {
@@ -75,7 +74,7 @@ export default {
 		})
 
 		await schema.validate(data, {
-			abortEarly: false
+			abortEarly: false,
 		})
 		
 		const orphanage = orphanagesRepository.create(data);

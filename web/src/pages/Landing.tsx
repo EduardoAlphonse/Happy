@@ -10,20 +10,26 @@ function Landing() {
 	return (
 		<div id="page-landing">
 			<div className="content-wrapper">
-				<img src={logoImg} alt="Logo Happy" />
+				<div className="location">
+					<img src={logoImg} alt="Logo Happy" />
+					<div className="city-state">
+						<strong>Juiz de Fora</strong>
+						<span>Minas Gerais</span>
+					</div>
+				</div>
 
 				<main>
 					<h1>Leve felicidade para o mundo</h1>
 					<p>Visite orfanatos e mude o dia de muitas crianças.</p>
 				</main>
 
-				<div className="location">
-					<strong>Juiz de Fora</strong>
-					<span>Minas Gerais</span>
-				</div>
 
 				<Link to="/app" className="enter-app">
 					<FiArrowRight size={26} color="rgba(0, 0, 0, 0.6)" />
+				</Link>
+
+				<Link to='/access' className="restricted-access-button">
+					<span>Acesso restrito</span>
 				</Link>
 			</div>
 		</div>

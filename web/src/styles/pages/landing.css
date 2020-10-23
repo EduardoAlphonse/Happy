@@ -52,16 +52,18 @@
 }
 
 .content-wrapper .location {
-	position: absolute;
-	top: 0;
-	right:0;
-
 	font-size: 2.4rem;
 	line-height: 3.4rem;
 
 	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.content-wrapper .location .city-state {
+	display: flex;
 	flex-direction: column;
-	text-align: right;
+	margin-left: 64px;
 }
 
 .content-wrapper .location strong {
@@ -87,4 +89,32 @@
 
 .content-wrapper .enter-app:hover {
 	background: #96FEFF;
+}
+
+.content-wrapper .restricted-access-button {
+	position: absolute;
+	right:0;
+	top: 0;
+
+	text-decoration: none;
+
+	padding: 13px 40px;
+
+	background:#12D4E0;
+	color: #FFF;
+	border-radius: 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	font-size: 20px;
+	line-height: 30px;
+	font-weight: 800;
+
+	transition: all 0.2s;
+}
+
+.content-wrapper .restricted-access-button:hover {
+	background: #96FEFF;
+	color: #15C3D6;
 }

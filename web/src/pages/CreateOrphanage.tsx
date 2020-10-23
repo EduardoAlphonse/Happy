@@ -49,7 +49,7 @@ export default function CreateOrphanage() {
     data.append('open_on_weekends', String(open_on_weekends));
     images.forEach(image => {
       data.append('images', image);
-    })
+    });
     
     await api.post('orphanages', data);
 
