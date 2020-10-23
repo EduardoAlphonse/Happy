@@ -31,8 +31,6 @@ export default {
 	},
 
 	async create(request: Request, response: Response) {
-		console.log(request.files);
-
 		const {
 			name,
 			latitude,
@@ -58,7 +56,7 @@ export default {
 			about,
 			instructions,
 			opening_hours,
-			open_on_weekends,
+			open_on_weekends: open_on_weekends === 'true',
 			images,
 		}
 

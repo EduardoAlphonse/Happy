@@ -2,14 +2,7 @@ import React from 'react';
 import Routes from './routes';
 
 import './styles/pages/landing.css';
-
-interface TitleProps {
-  text: String;
-}
-
-function Title(props: TitleProps) {
-  return <h1>{props.text}</h1>
-}
+import 'leaflet/dist/leaflet.css';
 
 function App() {
   return (
