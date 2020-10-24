@@ -51,11 +51,20 @@ export default function CreateOrphanage() {
       data.append('images', image);
     });
     
-    await api.post('orphanages', data);
+    await api.post('orphanages', data)
+      .then(response => {
+        const { success, message, orphanage } = response.data;
 
-    alert('Cadastro realizado ocm sucesso!');
+        if (success) {
+          history.push('/success');
+          return;
+        }
 
-    history.push('/app');
+        alert('Algo deu errado :(');
+        return;
+      })
+
+    history.push('/success');
   }
 
   function handleSelectImages(event: ChangeEvent<HTMLInputElement>) {
