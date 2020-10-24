@@ -15,8 +15,6 @@ export default {
 
 		const user = await usersRepository.findOne({ email });
 
-		console.log(request.body);
-
 		if (!user) {
 			return response.json({
 				message: `E-mail não cadastrado.`,
@@ -70,7 +68,6 @@ export default {
 			}
 
 			const user = usersRepository.create({ ...data, password: hash });
-			console.log(user);
 
 			await usersRepository.save(user);
 

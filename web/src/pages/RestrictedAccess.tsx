@@ -1,5 +1,6 @@
 import React, { FormEvent, useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
+import { FiCheck, FiArrowLeft } from 'react-icons/fi';
 import api from '../services/api';
 
 import logo from '../images/logo-vertical.svg';
@@ -11,6 +12,7 @@ export default function RestrictedAccess() {
 
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
+	const [displayCheckIcon, setDisplayCheckIcon] = useState('none');
 
 	async function handleLogin(event: FormEvent) {
 		event.preventDefault();
@@ -64,10 +66,36 @@ export default function RestrictedAccess() {
 							/>
 						</div>
 					</fieldset>
+
+					<div className="form-options">
+						<label htmlFor="remember-me" className="checkbox-container">
+							<input
+								type="checkbox"
+								name="remember-me"
+								id="remember-me"
+								onChange={() => setDisplayCheckIcon(displayCheckIcon === 'none' ? 'block' : 'none')}
+								checked={displayCheckIcon === 'block'}
+							/>
+							<span className="checkmark">
+								<FiCheck color="#FFF" style={{ display: displayCheckIcon }} />
+							</span>
+							<span className="label-text">Lembrar-me</span>
+						</label>
+
+						<div className="forget-password">
+							<Link to="/">
+								<span>Esqueci minha senha</span>
+							</Link>
+						</div>
+					</div>
 					<button className="confirm-button" type="submit">
 						Confirmar
           </button>
 				</form>
+
+				<Link to="/" className="cancel-login">
+					<FiArrowLeft size={26} />
+				</Link>
 			</div>
 		</div>
 	)
