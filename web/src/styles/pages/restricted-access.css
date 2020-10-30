@@ -36,7 +36,7 @@
 	flex-direction: column;
 	justify-content: center;
 
-	min-width: 440px;
+	min-width: 470px;
   padding: 20px 80px;
 
   background-color: #FFF;
@@ -179,6 +179,10 @@
 
 #login-page-container form.login-form button.confirm-button:hover {
   background: #36CF82;
+}
+
+#login-page-container form.login-form button.confirm-button:disabled {
+  background-color: #9BE3BF;
 }
 
 #login-page-container .cancel-login {

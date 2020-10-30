@@ -4,6 +4,7 @@
 
 #page-create-orphanage main {
   flex: 1;
+  margin-left: 96px;
 }
 
 form.create-orphanage-form {
@@ -117,8 +118,7 @@ form.create-orphanage-form .input-block input[type=file] {
 }
 
 form.create-orphanage-form .input-block .button-select {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
 }
 
 form.create-orphanage-form .input-block .button-select button {
@@ -127,6 +127,7 @@ form.create-orphanage-form .input-block .button-select button {
   border: 1px solid #D3E2E5;
   color: #5C8599;
   cursor: pointer;
+  flex: 1;
 }
 
 form.create-orphanage-form .input-block .button-select button.active {

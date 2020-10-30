@@ -1,6 +1,7 @@
 import React, { FormEvent, useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { FiCheck, FiArrowLeft } from 'react-icons/fi';
+import RouteButton from '../components/RouteButton';
 import api from '../services/api';
 
 import logo from '../images/logo-vertical.svg';
@@ -8,7 +9,7 @@ import logo from '../images/logo-vertical.svg';
 import '../styles/pages/restricted-access.css';
 
 export default function RestrictedAccess() {
-	const history = useHistory();
+	const { push } = useHistory();
 
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
@@ -17,6 +18,12 @@ export default function RestrictedAccess() {
 	async function handleLogin(event: FormEvent) {
 		event.preventDefault();
 
+		// Remove after implement
+		// login functionality
+		push('/dashboard/orphanages');
+		return;
+		// 
+
 		const data = { email, password };
 
 		await api.post('/user/login', data)
@@ -24,12 +31,11 @@ export default function RestrictedAccess() {
 				const { message, success } = response.data;
 				if (success) {
 					alert(message);
-					history.push('/');
+					push('/');
 					return
 				}
 
 				alert(message);
-				return
 			});
 	}
 
@@ -83,12 +89,16 @@ export default function RestrictedAccess() {
 						</label>
 
 						<div className="forget-password">
-							<Link to="/">
+							<RouteButton to="/" className="null-link">
 								<span>Esqueci minha senha</span>
-							</Link>
+							</RouteButton>
 						</div>
 					</div>
-					<button className="confirm-button" type="submit">
+					<button
+						className="confirm-button"
+						type="submit"
+						disabled={email === '' || password === ''}
+					>
 						Confirmar
           </button>
 				</form>

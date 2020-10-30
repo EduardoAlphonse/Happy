@@ -8,32 +8,14 @@ aside.app-sidebar {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  width: 96px;
 }
 
 aside.app-sidebar img {
   width: 48px;
 }
 
-aside.app-sidebar footer a,
-aside.app-sidebar footer button {
-  width: 48px;
-  height: 48px;
-
-  border: 0;
-
-  background: #12AFCB;
-  border-radius: 16px;
-
-  cursor: pointer;
-
-  transition: background-color 0.2s;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-aside.app-sidebar footer a:hover,
-aside.app-sidebar footer button:hover {
-  background: #17D6EB;
+aside.app-sidebar .dashboard-options a:first-child,
+aside.app-sidebar .dashboard-options button:first-child {
+  margin-bottom: 16px;
 }

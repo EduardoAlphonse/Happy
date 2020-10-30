@@ -1,0 +1,40 @@
+a,
+button {
+  width: 48px;
+  height: 48px;
+
+  border: 0;
+
+  background: #12AFCB;
+  border-radius: 16px;
+
+  cursor: pointer;
+
+  transition: background-color 0.2s;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  text-decoration: none;
+  display: flex !important;
+}
+
+a:hover,
+button:hover {
+  background-color: #17D6EB;
+}
+
+.null-link {
+  background-color: unset;
+  width: unset;
+  height: unset;
+}
+
+.null-link:hover {
+  background-color: unset;
+}
+
+.active {
+  background-color: #FFD666;
+}

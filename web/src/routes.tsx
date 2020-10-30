@@ -7,6 +7,8 @@ import CreateOrphanage from './pages/CreateOrphanage';
 import OrphanagesMap from './pages/OrphanagesMap';
 import RestrictedAccess from './pages/RestrictedAccess';
 import SuccessPage from './pages/SuccessPage';
+import Dashboard from './pages/Dashboard';
+import Requests from './pages/Requests';
 
 function Routes() {
 	return (
@@ -18,6 +20,8 @@ function Routes() {
 				<Route path="/orphanages/:id" component={Orphanage} />
 				<Route path="/access" component={RestrictedAccess} />
 				<Route path="/success" component={SuccessPage} />
+				<Route path="/dashboard/orphanages" component={Dashboard} />
+				<Route path="/dashboard/requests" component={Requests} />
 			</Switch>
 		</BrowserRouter>
 	)

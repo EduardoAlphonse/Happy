@@ -118,3 +118,12 @@
 	background: #96FEFF;
 	color: #15C3D6;
 }
+
+.content-wrapper .restricted-access-button {
+  width: unset;
+  height: unset;
+}
+
+a:hover {
+  background: #17D6EB;
+}

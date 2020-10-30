@@ -53,7 +53,7 @@ export default function CreateOrphanage() {
     
     await api.post('orphanages', data)
       .then(response => {
-        const { success, message, orphanage } = response.data;
+        const { success } = response.data;
 
         if (success) {
           history.push('/success');
